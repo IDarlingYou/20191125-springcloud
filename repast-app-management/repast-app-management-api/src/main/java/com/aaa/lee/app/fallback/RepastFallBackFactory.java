@@ -12,8 +12,6 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 /**
- * @Company AAA软件教育
- * @Author Seven Lee
  * @Date Create in 2019/11/20 11:41
  * @Description
  **/

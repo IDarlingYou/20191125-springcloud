@@ -25,6 +25,11 @@ public class AddMemberMessageController {
     @Autowired
     private RedisService redisService;
 
+    /**
+     * 添加个人信息
+     * @param member
+     * @return
+     */
     @PostMapping("/addMessage")
     public int addMemberMessages(@RequestBody Member member){
         return  addService.addMemberMessages(member,redisService);

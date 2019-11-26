@@ -30,6 +30,12 @@ public class AddMemberMessageService extends BaseService<Member> {
         return null;
     }
 
+    /**
+     * 添加个人信息
+     * @param member
+     * @param redisService
+     * @return
+     */
     public int addMemberMessages(Member member,RedisService redisService){
         int i = memberMapper.insert(member);
         if(i>0){

@@ -15,7 +15,7 @@ public interface ProductMapper extends Mapper<Product> {
     List<Product> getProductByShopId(Long shopId);
 
     /**
-     * 获取商品收藏信息
+     * 获取商品收藏列表信息
      * @param
      * @return
      */

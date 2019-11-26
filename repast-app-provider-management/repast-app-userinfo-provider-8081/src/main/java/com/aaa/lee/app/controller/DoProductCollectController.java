@@ -23,6 +23,12 @@ public class DoProductCollectController {
     @Autowired
     private RedisService redisService;
 
+    /**
+     * 购买商品执行添加收藏信息
+     * @param shopId
+     * @param openId
+     * @return
+     */
     @PostMapping("/pCollect")
     public Boolean productCollects(@RequestParam(value = "shopId") Long shopId, @RequestParam(value = "openId") String openId){
 

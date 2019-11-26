@@ -31,6 +31,13 @@ public class DoOrderCollectService extends BaseService<PmsCollect> {
         return pmsCollectMapper;
     }
 
+    /**
+     * 下订单执行收藏操作
+     * @param orderId
+     * @param openId
+     * @param redisService
+     * @return
+     */
     public Boolean orderCollectss(Long orderId,String openId,RedisService redisService){
         String s = redisService.get(REDIS_KEY);
         Member m = JSONUtil.toObject(s, Member.class);

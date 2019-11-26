@@ -21,11 +21,13 @@ import java.util.List;
 public class GetAllCollectsController {
 
     @Autowired
-    private RedisService redisService;
-
-    @Autowired
     private GetAllCollectsService getAllCollects;
 
+    /**
+     * 执行获取所有收藏信息操作
+     * @param openId
+     * @return
+     */
     @PostMapping("/getAllCollect")
     public List<Product> getAllCollects(@RequestParam(value = "openId") String openId){
 

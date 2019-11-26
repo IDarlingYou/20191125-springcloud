@@ -23,6 +23,12 @@ public class DoOrderCollectController {
     @Autowired
     private RedisService redisService;
 
+    /**
+     * 下订单执行收藏操作
+     * @param orderId
+     * @param openId
+     * @return
+     */
     @PostMapping("/oCollect")
     public Boolean orderCollects(@RequestParam(value = "orderId") Long orderId, @RequestParam(value = "openId") String openId){
         return doOrderCollectService.orderCollectss(orderId, openId, redisService);

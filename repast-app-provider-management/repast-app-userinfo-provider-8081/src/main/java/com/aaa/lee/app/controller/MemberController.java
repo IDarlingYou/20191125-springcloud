@@ -10,8 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @Company AAA软件教育
- * @Author Seven Lee
+ * @Author Lee
  * @Date Create in 2019/11/21 9:36
  * @Description
  **/
@@ -24,7 +23,7 @@ public class MemberController {
     private RedisService redisService;
 
     /**
-     * @author Seven Lee
+     * @author Lee
      * @description
      *      执行登录操作
      * @param

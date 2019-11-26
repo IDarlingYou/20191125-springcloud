@@ -27,6 +27,11 @@ public class GetAllCollectsService extends BaseService<Product> {
         return productMapper;
     }
 
+    /**
+     *获取收藏列表的操作
+     * @param openId
+     * @return
+     */
     public List<Product> GetAllCollects(String openId){
         List<Product> collects = productMapper.getAllCollects();
 

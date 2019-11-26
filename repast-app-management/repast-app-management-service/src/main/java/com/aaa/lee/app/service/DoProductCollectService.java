@@ -30,6 +30,13 @@ public class DoProductCollectService extends BaseService<PmsCollect> {
         return pmsCollectMapper;
     }
 
+    /**
+     * 购买商品执行添加收藏信息
+     * @param shopId
+     * @param openId
+     * @param redisService
+     * @return
+     */
     public Boolean DoProductCollect(Long shopId,String openId,RedisService redisService){
         String s = redisService.get(REDIS_KEY);
         Member member = JSONUtil.toObject(s, Member.class);
