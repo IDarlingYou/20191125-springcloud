@@ -15,8 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 /**
- * @Company AAA软件教育
- * @Author Seven Lee
+ *
  * @Date Create in 2019/11/21 8:51
  * @Description
  *      swagger2称之为前后端分离框架
@@ -31,7 +30,7 @@ public class MemberController extends BaseController {
     private IRepastService repastService;
 
     /**
-     * @author Seven Lee
+     * @author
      * @description
      *      执行登录操作
      * @param

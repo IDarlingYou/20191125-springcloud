@@ -29,6 +29,16 @@ import java.util.List;
 @FeignClient(value = "userinfo-interface-provider", fallbackFactory = RepastFallBackFactory.class)
 public interface IRepastService {
 
+
+    /**
+     * 添加用户信息
+     * @param member
+     * @return
+     */
+    @PostMapping("/addMessage")
+    int addMemberMessages(@RequestBody Member member);
+
+
     /**
      * 填写订单的时候执行收藏操作
      * @param orderId

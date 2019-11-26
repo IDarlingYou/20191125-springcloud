@@ -39,6 +39,7 @@ public class MemberService extends BaseService<Member> {
     public Boolean doLogin(String openId, RedisService redisService) {
         try {
             Member mbr = memberMapper.selectByOpenId(openId);
+
             if(null != mbr) {
                 // 说明从数据库中查询到数据，说明登录成功
                 // 应该把用户对象存入session中，session跨域了，就使用redis解决(redis也有问题)
@@ -49,19 +50,11 @@ public class MemberService extends BaseService<Member> {
                     // 说明redis存入成功
                     return true;
                 }
-                /**
-                 * 如果涉及到session的跨域:
-                 *      如果是ajax，session跨域传递数据必须使用jsonp
-                 *      如果是常规的调用:
-                 *          1.把user对象存到redis中，也就是说redis就相当于session，然后把redis的key存入到cookie中
-                 *          2.自己百度session的全局配置
-                 *
-                 *      什么是脏读什么是幻读？
-                 *          无论是脏读还是幻读假设第一次读出了一条数据，第二次读出了两条
-                 *          脏读和幻读唯一的区别就看事务是否提交(也就是说是否执行了commit操作)
-                 *          如果执行了则就是幻读
-                 *          如果没有执行就是脏读
-                 */
+            }else{
+                int i = memberMapper.insertMemberMessage(openId);
+                if(i>0){
+                    return true;
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();

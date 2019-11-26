@@ -24,6 +24,12 @@ public class RepastFallBackFactory implements FallbackFactory<IRepastService> {
     public IRepastService create(Throwable throwable) {
         IRepastService repastService = new IRepastService() {
             @Override
+            public int addMemberMessages(Member member) {
+                System.out.println("测试添加用户信息");
+                return 0;
+            }
+
+            @Override
             public Boolean orderCollects(Long orderId, String openId) {
                 System.out.println("测试订单商品收藏熔断数据");
                 return null;
